@@ -16,6 +16,10 @@ p {
     line-height: 1.5;
 }
 
+h1 {
+    text-align: center; /* NUEVO: centra el título de las páginas internas */
+}
+
 h2 {
     margin: 0;
 }
@@ -38,16 +42,22 @@ header img {
     height: 48px;
 }
 
+/* CAMBIO: main solo conserva lo que sirve para todas las páginas */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+}
+
+/* CAMBIO: la cuadrícula de tres columnas pasa a su propia clase */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
-main a {
+/* CAMBIO: la clase va primero (es el contenedor) y se quitó del final */
+.card-grid a {
     background-color: #111a2e;
     border: 2px solid #1e3a4a;
     border-radius: 1rem;
@@ -58,7 +68,7 @@ main a {
     gap: 1rem;
 }
 
-main a span {
+.card-grid a span {
     color: #2dd4bf;
     display: inline-block;
     padding: 0.4rem 1.2rem;
@@ -70,12 +80,12 @@ main a span {
     transition: background-color 0.2s, color 0.2s;
 }
 
-main a:hover {
+.card-grid a:hover {
     background-color: #14263a;
     border: 2px solid #2dd4bf;
 }
 
-main a:hover span {
+.card-grid a:hover span {
     background-color: #2dd4bf;
     color: #0b1120;
 }
@@ -85,8 +95,6 @@ nav {
     gap: 1.5rem;
     justify-self: end;
 }
-
-
 
 input {
     background-color: #111a2e;
@@ -106,7 +114,8 @@ input:focus {
 }
 
 @media (max-width: 700px) {
-    main {
+    /* CAMBIO: ahora la cuadrícula vive en .card-grid, no en main */
+    .card-grid {
         grid-template-columns: 1fr;
     }
 
@@ -119,6 +128,5 @@ input:focus {
     nav {
         justify-self: center;
         flex-wrap: wrap;
-
     }
 }
