@@ -17,7 +17,7 @@ p {
 }
 
 h1 {
-    text-align: center; /* NUEVO: centra el título de las páginas internas */
+    text-align: center;
 }
 
 h2 {
@@ -42,21 +42,18 @@ header img {
     height: 48px;
 }
 
-/* CAMBIO: main solo conserva lo que sirve para todas las páginas */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
 }
 
-/* CAMBIO: la cuadrícula de tres columnas pasa a su propia clase */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
-/* CAMBIO: la clase va primero (es el contenedor) y se quitó del final */
 .card-grid a {
     background-color: #111a2e;
     border: 2px solid #1e3a4a;
@@ -113,8 +110,16 @@ input:focus {
     outline: none;
 }
 
+.intro {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.four-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 @media (max-width: 700px) {
-    /* CAMBIO: ahora la cuadrícula vive en .card-grid, no en main */
     .card-grid {
         grid-template-columns: 1fr;
     }
